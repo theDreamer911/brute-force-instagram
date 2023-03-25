@@ -1,2 +1,3 @@
 webbot==0.34
 pynput==1.7.1
+pip install -r requirements.txt
